@@ -26,6 +26,7 @@ public class Main {
         for(User user : service.getAllUsers()){
             System.out.println(user.toString());
         }
+        //service.removeUserById(12);
         service.cleanUsersTable();
         service.dropUsersTable();
         System.out.println("всё прошло");
