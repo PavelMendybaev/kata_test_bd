@@ -14,14 +14,10 @@ public class UserServiceImpl implements UserService {
 
     UserDao userDao = new UserDaoJDBCImpl();
 
-    Statement statement = Util.Conect();
-
 
     public void createUsersTable() {
 
         userDao.createUsersTable();
-
-
 
     }
     public void dropUsersTable() {

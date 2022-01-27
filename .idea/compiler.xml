@@ -9,8 +9,13 @@
         <module name="TaskJDBC" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="17">
       <module name="TaskJDBC" target="7" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kata_test_bd2" options="" />
+    </option>
   </component>
 </project>

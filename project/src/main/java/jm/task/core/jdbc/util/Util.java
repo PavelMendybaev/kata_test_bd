@@ -8,11 +8,11 @@ import java.sql.Statement;
 public class Util {
     private static final String URL = "jdbc:mysql://localhost:3306/katadb";
     private static final String User = "root";
-    private static final String Pass = "root";
+    private static final String Pass = "12345";
 
 
 
-    private static Connection connect(){
+    public  static Connection connect(){
 
         Connection connection = null;
         try {
@@ -24,13 +24,5 @@ public class Util {
     }
 
 
-    public static Statement Conect(){
-        Statement statement = null;
-        try {
-            statement = connect().createStatement();
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return statement;
-    }
+
 }
