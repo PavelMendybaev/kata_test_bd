@@ -45,11 +45,13 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        String sql = "insert into user(name , lastName , age)\n" +
-                "values( '"+name+"' , '"+lastName+"' , "+age+");";
+
         try {
-            PreparedStatement statement = conect.prepareStatement(sql);
-            statement.executeUpdate(sql);
+            PreparedStatement statement = conect.prepareStatement("insert into user(name , lastName , age) values( ? , ? , ?);");
+            statement.setString(1 ,name);
+            statement.setString(2 , lastName);
+            statement.setByte(3 , age);
+            statement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -57,10 +59,11 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void removeUserById(long id) {
 
-        String sql = "DELETE FROM user where id = "+id+";";
+
         try {
-            PreparedStatement statement = conect.prepareStatement(sql);
-            statement.executeUpdate(sql);
+            PreparedStatement statement = conect.prepareStatement("DELETE FROM user where id = ?;");
+            statement.setLong(1 , id);
+            statement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
         }
